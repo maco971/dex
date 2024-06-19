@@ -1,0 +1,203 @@
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dex-app
+---
+apiVersion: v1
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4RENDQWRpZ0F3SUJBZ0lVZndQY0x3OEhEekRpdWp5WVc3R0JqR0JXNDVnd0RRWUpLb1pJaHZjTkFRRUwKQlFBd0VqRVFNQTRHQTFVRUF3d0hhM1ZpWlMxallUQWVGdzB5TXpBMU16QXhNakV3TWpsYUZ3MHlOREExTWpreApNakV3TWpsYU1CSXhFREFPQmdOVkJBTU1CMnQxWW1VdFkyRXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCCkR3QXdnZ0VLQW9JQkFRQzZJSTcwUHc1ZTFkMENHdlZKQkdhMGQ3QkREbTlJT1AzTnRmMFNoK1ZvcFFXcVFNaXEKdWhTSzJBcEFTR1pzMkJTZWdTdjBib0VmelFmQWx4eFhoamY0VXZZb2xpZ0pZaExNZklYWDJsTXhQdW03MXhzTwprSUN0UXlRWG5QOVdnUUlsV0VsdVFiUFlzdkVoQWw3RGJsRVBrQ2YvbUIrbmVVWkZJNXc5aHRyeDZwQ3dzcG1zClpYdXdwb2hSek54blJwWnl5WDd6MTJleXQ0WGhqSDM1bjlMWXpXQkZiYkhHaXFIYjR4VGc1YkY4SCtQTkVDYk0KTyt0SG5taFBKYUFZdW5vYm81Tk55UDRDZGV1TTRxRXNFdmswdk5XclFaOHRBSHZWWFYrUTM2TDVKRm1BQWhlUApxdnJVWXdKcVlRTk1BbzgrU2FSS0J3dEM3TC9ydWt1R3ZPd0ZBZ01CQUFHalBqQThNQWtHQTFVZEV3UUNNQUF3CkN3WURWUjBQQkFRREFnWGdNQ0lHQTFVZEVRUWJNQm1DRjJzNGN5MXRZWE4wWlhJdVlXTmxibk5wTG14dlkyRnMKTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFDUUpQMmVFWS9RSjFXaEVnaW9aayswSEZBVU80ZCttU1VQVlhQMwozbkNRbGVUa1JVb3lBdGdsRWtSK0pSd1BJd2ZlM2dtVC85SU1POTdqRXp6UnM0SktCd05PWUJOREgzazNpZmw4CmRSQ1FPODJiNnlhc25ySUdOMTlhc0t2dVBUckpBeW1qRWFQM1VLOEQyRnZUQWFzZXJENkJZM1RMVlVTUG1tWlcKdEd0SVNncU1aaHZkVjVSWXJ0UDkrZzlIZXY3N0VodVpuSUpnVEVTSncyL3NOb2pmWDJicVdxa0orTHMvNUlwbQpnVXAvVUkvc29pWXM0VFFRRnVkS3poRmk3ZkcvM2RFdVNabTd2eE9QeEpSdTFpKzJwaEJKSGc0dlFCYldQUDlBCjlvOE9rdkQ2QU9EYnA3Wjhlby9ESU5sU05jc2lSL1lRVythRFYxeVVkYWJscTJPTgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBdWlDTzlEOE9YdFhkQWhyMVNRUm10SGV3UXc1dlNEajl6Ylg5RW9mbGFLVUZxa0RJCnFyb1VpdGdLUUVobWJOZ1Vub0VyOUc2Qkg4MEh3SmNjVjRZMytGTDJLSllvQ1dJU3pIeUYxOXBUTVQ3cHU5Y2IKRHBDQXJVTWtGNXovVm9FQ0pWaEpia0d6MkxMeElRSmV3MjVSRDVBbi81Z2ZwM2xHUlNPY1BZYmE4ZXFRc0xLWgpyR1Y3c0thSVVjemNaMGFXY3NsKzg5ZG5zcmVGNFl4OStaL1MyTTFnUlcyeHhvcWgyK01VNE9XeGZCL2p6UkFtCnpEdnJSNTVvVHlXZ0dMcDZHNk9UVGNqK0FuWHJqT0toTEJMNU5MelZxMEdmTFFCNzFWMWZrTitpK1NSWmdBSVgKajZyNjFHTUNhbUVEVEFLUFBrbWtTZ2NMUXV5LzY3cExocnpzQlFJREFRQUJBb0lCQUNNUTNUM2czMWs0bTRHNQpDSHN3TEJWVjgwdyszUEpUWW1XdUlyYXFDYXQwWTZQV3ZyZURoVGsvU0hjaDdNSVcxNU9oTEdISnErUU00YWdFCkVCL2hOb3cvUFFjYWV3S0JpcDhoMnFsM0JYTmlzZkJrcjBGSU1pWHlYMHRmbGE5N2NLY09nZzhXcThab3VBc0wKQWtWNWRDWWxkNU9zMmxIWUJFZ2tWRnczR3VxMmZzK3F4SGNNM2o1eG5ldGp1VEJzcUhobndSR2dNQTdSeTVUawo5SllOemEwRmhTeHhsWmR3bzF2T25hRXlPd2JHS1lvMXljYXdtREZHbVZnK2hJVFFNdkhFV0pxRlhJN1E1NWJtCm5Nc3F6RmdjYVFHOWdQN3RrOEt0WkZOTjUvRFdMZ1dMT1gxaDI4dG84MmN2ZXlISkdnRUs1enl0S0VJcE1UMm4KMmJmY0ZlRUNnWUVBOFZrakFoWUZOdXQyc0J2Y1VZWERJaEFNZTM4MTM4STdWa2pUOVBVaFZYNXJ1OFBiMForRQo1RHBnRlRGWmZCMVpHMW5nZ2FPWGtqbE1Xbk1JcjRjd2hIWWJJcFNBNlc0T0hBL2VBbWU5WFhDeGgxY1lUbytaCnFPZnRXYkdUV3lVV3dleStqSDBYejRoMW9XVXhIbFpneVg5eVlOVDdkS1J5aWVkK1JMaUIwTGtDZ1lFQXhXMDMKT05aNlhjb2FpeDlUazJaQkc5U1ZOeTJ5QlZ1ZW5jMlVzb0Z5MG5nRzB4aCsvSVFIaHl5OVZhYmlSUkRLOXZnRgpTVXhXZnJZUHB0WS9qSi8wYVd5OHM5ZDl6TXV4WXVPSzIyV20xVE5ENkNENjFkSUlhS1FPdlc5S0RwWnpWZkFWCmVOc1FOZjFaL0lWVEFzVG5GditJUGNPZVBWL1BnRjc3L2krMFY2MENnWUJXcCtXYyt5RVdMZ2NvaG1oZDBRUlcKTjZMenVLSTBYRDRINWhCTWxMTktTaUVPZ3Uxclg3Wk1aL1ZWeHFsVm1nZ0RmUXJTSVZYcng2ejFrUFllYUJEdwpqcU9Ca0FhVlNkSEJHNlZnQWJXSlZrdzN4dnJRUWxrdXYwK0djKzd2dStwbTZNVW1Ga2cxV002N2kyVE9lcjgzCnVnM3NYS3lJbmY4T0t0TTRnM01BNlFLQmdRQ3VVOEw0T0VLeXdIdnhyc2F3bUJFVHp3RzNTRzB5Vi9WV2FDcE4KK1FuM21LNkdCZEpUalEzTXFZL0JxdXVQaXNWOWtBR3krR3BEMXVVNUwyUEwrNDNvN1hBdTZUQVcveUh5TFBQMgp5T3FveFd6SDh4OHFZUnkxc1crbWpEZDdiQlFKcFVhQWdnYnRkWG5aQmEwSCsvQUdHYnNtdHEzcWljaURGTncwClZkRkx2UUtCZ0VraHpXMFNETnB3eC85U216QTY5K1RXRWJ5NFBibnpSeDQ5WHVCSDVWWkJ5ZWM4ajNCbHlSWWsKRlVKazdUUURnUEhzWEpPcW0yMDVVYVdSbDVNQ1RaZ0tSemw4cFNmdHBkTm9McW1wMDQxcm92QXF1ZFNiOU5QcwpRKzJFOU5TNXNDMHUxNUdUaXVXQVhSc3IyNVlld1k5NUpVVWtPUjlLcXdtanRUcXBqTE9WCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+kind: Secret
+metadata:
+  name: dex.acensi.fr.tls
+  namespace: dex-app
+type: kubernetes.io/tls
+---
+apiVersion: v1
+data:
+  acensi.ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURoVENDQW0yZ0F3SUJBZ0lRVjE2RVR0a3hmcXBDL0xXbThzL01XekFOQmdrcWhraUc5dzBCQVFzRkFEQkoKTVJVd0V3WUtDWkltaVpQeUxHUUJHUllGYkc5allXd3hGakFVQmdvSmtpYUprL0lzWkFFWkZnWmhZMlZ1YzJreApHREFXQmdOVkJBTVREMkZqWlc1emFTMVRRekF3TVMxRFFUQWVGdzB4TnpBMk1EZ3hNVEEyTlRoYUZ3MHlOekEyCk1EZ3hNVEUyTlRkYU1Fa3hGVEFUQmdvSmtpYUprL0lzWkFFWkZnVnNiMk5oYkRFV01CUUdDZ21TSm9tVDhpeGsKQVJrV0JtRmpaVzV6YVRFWU1CWUdBMVVFQXhNUFlXTmxibk5wTFZORE1EQXhMVU5CTUlJQklqQU5CZ2txaGtpRwo5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBbmx6NWg1L1JLQTk0UXhDbENVZTRZc0pyejZqZEdXL1gwTkZoCnVRSlh0WXR1YUNEWUhreDVNejFCWjdqSW1jQW9ObUN2KzBxYlh0K1hURmt1K1lMSHM2OXAwUU52eDViSWZ5ZEwKQStHTGZqa3RqUTFodG1pVXVQS2JhNDhqZzFxZVo2L3JzdVZZTUFEY0xQL05FRHBjaDNmTG11Y1phYnZwbCtjbwppV1BSQ1hBM1dETFpETjMvYkY1V203eTVzRmtvQXhtSURlczJkOW5jYm1mMlFUaU9DRW51MEpGcUxqdzhFaStrCm9lU0gyQitWb3AvYkN1bUVkK2RpZVJ0UUU0aWFydDlndEpDcnRyN3A5eExlK1c5NXVJZTJlQ2orS080SnU5WjYKK3RTTlNUNkRLb3BPbVRQMEtqZVRkbzFXRGVpZWRSMkkwT0REWkh0elFwTnFwRnM5R3dJREFRQUJvMmt3WnpBVApCZ2tyQmdFRUFZSTNGQUlFQmg0RUFFTUFRVEFPQmdOVkhROEJBZjhFQkFNQ0FZWXdEd1lEVlIwVEFRSC9CQVV3CkF3RUIvekFkQmdOVkhRNEVGZ1FVMGJ4cTl1clIvRUFyRW8yTW1lMjlORHZKdDRjd0VBWUpLd1lCQkFHQ054VUIKQkFNQ0FRQXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSnY5T0o0ZjR2ckU5cHZVclJoUlBWQTIrOFFLTGVvVgpPSlJ4NUh6Mjdkd2w1bHhCU1NhWmlZM2R0cTllSEd1MkJScTJ0ejZSbkdQckYwQndBdGVJZ1hVeEtJYnZQV0FLCnhZSGo1MUV5TlQ2S0NQWnV0enBqNENOMFllWjdLUUpZSHhDTGViSWg4WmlrTlM4dFV3U0JUZmJXUmh2RnpWVWwKaWFNQm9Bak5WMW5JbWtQbEV6QVJZb25zMFZ4VjZtSkdrdjNIeXpVcEtCR3Y5ZVM1UnNuaDNyajVjcHJKbXpiOApFSmkzRlBTSDlpZmxSVjlTdnh2S3RHNEJIOE0yRVRiNU9Ybk83RDRkcy80Ujh3MUpTRlltNFpXSG9JQVBkUjBqCjBIWTdOQ0FtanE3SGpLcjgrd000R3Qzem00Wjd1cVd6ekl5U2U3QlpmUUlRZ29VdkU5dXpibms9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+kind: Secret
+metadata:
+  name: ldap.acensi.fr.ca
+  namespace: dex-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dex
+  name: dex
+  namespace: dex-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dex
+  template:
+    metadata:
+      labels:
+        app: dex
+    spec:
+      serviceAccountName: dex # This is created below
+      containers:
+      - image: ghcr.io/dexidp/dex:v2.30.0
+        name: dex
+        command: ["/usr/local/bin/dex", "serve", "/etc/dex/cfg/config.yaml"]
+
+        ports:
+        - name: http
+          containerPort: 32000
+
+        volumeMounts:
+        - name: config
+          mountPath: /etc/dex/cfg
+        - name: tls
+          mountPath: /etc/dex/tls
+        - name: ca # ajout certificats
+          mountPath: /etc/ssl/certs
+          readOnly: true
+
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 32000
+            scheme: HTTPS
+      volumes:
+      - name: config
+        configMap:
+          name: dex
+          items:
+          - key: config.yaml
+            path: config.yaml
+      - name: tls
+        secret:
+          secretName: dex.acensi.fr.tls
+      - name: ca
+      #  hostPath:  # passage du fichier par host
+      #    path: /etc/dex/ldap/certs
+        secret:   # passage du fichier par secret
+          secretName: ldap.acensi.fr.ca
+        
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: dex
+  namespace: dex-app
+data:
+  config.yaml: |
+    issuer: https://k8s-master.acensi.local:32000
+    clientID: kubernetes
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+    web:
+      https: 0.0.0.0:32000
+      tlsCert: /etc/dex/tls/tls.crt
+      tlsKey: /etc/dex/tls/tls.key
+    connectors:
+    - type: ldap
+      name: kubernetes
+      id: kubernetes
+      config:
+        clientID: kubernetes
+        clientSecret: ZXhhbXBsZS1hcHAtc2VjcmV0
+        redirectURI: https://k8s-master.acensi.local:32001/callback
+        #host: ldap.acensi.network:389
+        host: ldap.acensi.network:636
+        #host: ac-cl-sc014.acensi.local:636
+        #insecureNoSSL: true #modifie pour port 636, activer pour ne pas utiliser le SSL
+        #insecureSkipVerify: true #modifie pour port 636, activer si il n'y a pas de CA
+        #startTLS: true #modifie pour port 636, activer poue utiliser faire un StartTLS
+        rootCA: /etc/ssl/certs/acensi.ca.crt #ajout du certificat pour le ldap
+
+        bindDN: cn=App Kubernetes,ou=Services,ou=_Rights,dc=acensi,dc=local
+        bindPW: 
+
+        usernamePrompt: SSO Username
+
+        userSearch:
+          baseDN: dc=acensi,dc=local
+          filter: "(objectClass=person)"
+          username: mail
+          # "DN" (case sensitive) is a special attribute name. It indicates that
+          # this value should be taken from the entity's DN not an attribute on
+          # the entity.
+          idAttr: DN
+          emailAttr: mail
+          nameAttr: cn
+
+        groupSearch:
+          baseDN: dc=acensi,dc=local
+          filter: "(objectClass=groupOfNames)"
+
+          userMatchers:
+            # A user is a member of a group when their DN matches
+            # the value of a "member" attribute on the group entity.
+          - userAttr: uid
+            groupAttr: member
+
+          # The group name should be the "cn" value.
+          nameAttr: name
+
+    oauth2:
+      skipApprovalScreen: true
+    staticClients:
+    - id: kubernetes
+      redirectURIs:
+      - 'https://k8s-master.acensi.local:32001/callback'
+      name: 'kubernetes'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    logger:
+      level: "debug"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dex
+  namespace: dex-app
+spec:
+  type: NodePort
+  ports:
+  - name: dex
+    port: 32000
+    protocol: TCP
+    targetPort: 32000
+    nodePort: 32000
+  selector:
+    app: dex
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: dex
+  name: dex
+  namespace: dex-app
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: dex
+rules:
+- apiGroups: ["dex.coreos.com"] # API group created by dex
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["apiextensions.k8s.io"]
+  resources: ["customresourcedefinitions"]
+  verbs: ["create"] # To manage its own resources, dex must be able to create customresourcedefinitions
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: dex
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: dex
+subjects:
+- kind: ServiceAccount
+  name: dex           # Service account assigned to the dex pod, created above
+  namespace: dex-app  # The namespace dex is running in
